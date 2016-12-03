@@ -8,7 +8,7 @@ void drawGUI(){
   String second = mySecond();
   //int second = second();
   String date = day+"/"+month+"/"+year;
-  float responMid = (width-menuBarW)/2;
+  float responMid = ((width+menuBarW)/2);
   //float upBar = (width/2)+menuBarW;
   //float upBarX = upBar-400;
   float upBarX = responMid-400;
@@ -16,18 +16,17 @@ void drawGUI(){
   fill(#DB2C2C);
   rect(0,0,menuBarW,height);
   // Horní lišta
-
-  // String dayTime = "";
   fill(#3F90F0);
   rect(upBarX,0,800,30,0,0,120,120);
   fill(#FFFFFF);
+// Vypsání textu, datumu a času na horní lištu
   // Time
   textFont(robRegular);
   text(hour+":"+minute+":"+second, upBarX+10, 20);
   // Date
   float dateW = textWidth(date);
   text(date, ((upBarX+800)-dateW)-10, 20);
-
+  // Nazev programu
   float programNameW = textWidth(programName);
   textFont(robLight);
   text(programName, responMid-(programNameW/2), 20);
