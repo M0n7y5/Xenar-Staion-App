@@ -21,7 +21,7 @@ void setup() {
   //textMode(SHAPE);
   initFonts();
   //fullScreen();
-  Ani.init(this);					// Inicializace animací
+  Ani.init(this);	// Inicializace animací
   cp5 = new ControlP5(this); 
   smooth();
 }
