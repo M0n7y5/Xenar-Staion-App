@@ -16,7 +16,7 @@ PFont robLight;
 
 void setup() {
   size(1024, 600, P3D);
- //surface.setResizable(true);
+  surface.setResizable(true);
   frameRate(80);
   //textMode(SHAPE);
   initFonts();
