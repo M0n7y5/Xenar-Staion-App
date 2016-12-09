@@ -58,7 +58,7 @@ void drawGUI(){
   rect(upBarX,0,800,30,0,0,90,90);
   triangle(width-setupButtonS, 0, width, 0, width, setupButtonS);
   Controller setupM = cp5.getController("setup_menu");
-  setupM.setPosition(width-20, 20);
+  setupM.setPosition(width-27, 2);
   setupM.update();
 
   fill(#ECF0F1);
