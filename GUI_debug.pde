@@ -6,5 +6,5 @@ void helpMe(){
 
  // float fpsTextW = textWidth(str(frameRate));
  textFont(robRegular);
- text(frameRate, width-65, 18); 
+ text(frameRate, width-65, height);
 }
