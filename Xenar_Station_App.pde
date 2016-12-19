@@ -6,8 +6,9 @@ int aniMenuDur = 1;
 float menuBarW = 75;
 boolean menuBarClosed = false;
 float leftCircleSize = 46;
-float cTempSize, cGpsSize, cVoltageSize = 46;
-float upBarH = 30;
+float cTempSize, cGpsSize, cVoltageSize, cSetup = 46;
+float upBarW = 30;
+boolean setupMenuClosed = false;
 float setupButtonS = 50;
 // Debug helper
 boolean debug = true;
@@ -87,17 +88,17 @@ void setup() {
 
   cp5.addIcon("setup_menu",5)
      .setPosition(0,height/2)
-     .setSize(25,25)
+     .setSize(45,45)
      //.setRoundedCorners(20)
-     .setFont(createFont("fontawesome-webfont.ttf", 20))
+     .setFont(createFont("fontawesome-webfont.ttf", 40))
      .setFontIcons(#00f013, #00f013)
      //.setScale(0.9,1)
-     //.setSwitch(true)
+     .setSwitch(true)
      .setColorBackground(color(255,100))
      .setColorActive(color(#434545))
      .setColorForeground(color(#000000))
      .hideBackground()
-     ;  
+     ;   
   
   smooth();
 }
@@ -113,7 +114,6 @@ void draw() {
 
   
 }
-
 
 
 

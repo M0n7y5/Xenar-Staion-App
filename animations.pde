@@ -15,7 +15,8 @@ void menuBarControl(){
 public void leftCircleAni(String button, String val){
   Controller c = cp5.getController(button);
   if (c.isMouseOver()) {
-    println("["+millis()+"] "+"Nad tlacitkem "+button+" je mys." );
+    
+    //println("["+millis()+"] "+"Nad tlacitkem "+button+" je mys." );
     Ani.to(this, 0.2, val, 53, Ani.CUBIC_OUT);
   }
   else {
@@ -24,14 +25,17 @@ public void leftCircleAni(String button, String val){
   if (c.isMousePressed()) {
     Ani.to(this, 0.05, val, 59, Ani.CUBIC_OUT);
   }
-
-/*  public void upBarAni(){
-
-  	if () {
-  		
-  	}
-
-  }*/
 }
 
+void upBarAni(boolean state){
 
+		if(state){
+			Ani.to(this, 1.5, "upBarW", height/2, Ani.CUBIC_OUT);
+			
+		}
+		else {
+			Ani.to(this, 1.5, "upBarW", 30, Ani.CUBIC_OUT);
+			
+		}
+
+}

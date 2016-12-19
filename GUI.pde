@@ -35,32 +35,40 @@ void drawGUI(){
   // menu kruhy, pozadí, left bar
   fill(#ECF0F1);
   Controller tempM = cp5.getController("temp_menu");
-  tempM.setPosition(menuBarW-75/2-45/2, (height/2)-(45/2)-90);
+  tempM.setPosition(menuBarW-75/2-45/2, height/2-45/2-90);
   tempM.update();
   leftCircleAni("temp_menu", "cTempSize");
   ellipse(menuBarW-75/2, (height/2)-90, cTempSize, cTempSize);
 
   Controller gpsM = cp5.getController("gps_menu");
-  gpsM.setPosition(menuBarW-75/2-45/2,(height/2)-(45)/2);
+  gpsM.setPosition(menuBarW-75/2-45/2 ,height/2-45/2);
   gpsM.update();
   leftCircleAni("gps_menu", "cGpsSize");
   ellipse(menuBarW-75/2, (height/2), cGpsSize, cGpsSize);
   
 
   Controller voltageM = cp5.getController("voltage_menu");
-  voltageM.setPosition(menuBarW-75/2-45/2,((height/2)-(45)/2)+90);
+  voltageM.setPosition(menuBarW-75/2-45/2, height/2-45/2+90);
   voltageM.update();
   leftCircleAni("voltage_menu", "cVoltageSize");
   ellipse(menuBarW-75/2, (height/2)+90, cVoltageSize, cVoltageSize);
 
+  Controller setupM = cp5.getController("setup_menu");
+  setupM.setPosition(menuBarW-75/2-45/2, height/2-45/2+180);
+  leftCircleAni("setup_menu", "cSetup");
+  ellipse(menuBarW-75/2, (height/2)+180, cSetup, cSetup);
+  setupM.update();
+  
+
   // Horní lišta a nastavení
   fill(#595F63);
-  rect(upBarX,0,800,30,0,0,90,90);
-  triangle(width-setupButtonS, 0, width, 0, width, setupButtonS);
-  Controller setupM = cp5.getController("setup_menu");
-  setupM.setPosition(width-27, 2);
-  setupM.update();
+  rect(upBarX,0,800,upBarW,0,0,90,90);
 
+
+  /*if (setupM.isPressed()) {
+    println(millis()+"-WTF?");
+  }
+*/
   fill(#ECF0F1);
 
 // Vypsání textu, datumu a času na horní lištu
@@ -101,6 +109,12 @@ void menu(boolean theValue) {
   println("Je menu zavrene? ", theValue);
   menuBarControl();
 }
+
+
+void setup_menu(boolean theValue){
+	println("Je horni lista zavrena? : ", theValue);
+	upBarAni(theValue);
+} 
 
 void gps_menu(boolean theValue){
 
