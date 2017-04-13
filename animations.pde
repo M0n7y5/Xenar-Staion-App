@@ -17,28 +17,22 @@ public void leftCircleAni(String button, String val) {
 	if (c.isMouseOver()) {
 
 		//println("["+millis()+"] "+"Nad tlacitkem "+button+" je mys." );
-		Ani.to(this, 0.2, val, 53, Ani.CUBIC_OUT);
+		Ani.to(this, 0.2f, val, 53, Ani.CUBIC_OUT);
 	} else {
-		Ani.to(this, 0.35, val, 46, Ani.CUBIC_OUT);
+		Ani.to(this, 0.35f, val, 46, Ani.CUBIC_OUT);
 	}
 	if (c.isMousePressed()) {
-		Ani.to(this, 0.05, val, 59, Ani.CUBIC_OUT);
+		Ani.to(this, 0.05f, val, 59, Ani.CUBIC_OUT);
 	}
 }
 
 void upBarAni(boolean state) {
 
 	if (state) {
-		Ani.to(this, 0.2, "upBarH", height / 2, Ani.CUBIC_OUT);
-		//Ani.to(this, 0.2, "setupCcolorR", 243, Ani.CUBIC_OUT);
-		//Ani.to(this, 0.2, "setupCcolorG", 123, Ani.CUBIC_OUT);
-		//Ani.to(this, 0.2, "setupCcolorB", 97, Ani.CUBIC_OUT);
+		Ani.to(this, 0.2f, "upBarH", height / 2, Ani.CUBIC_OUT);
 
 	} else {
-		Ani.to(this, 0.2, "upBarH", 30, Ani.CUBIC_OUT);
-		//Ani.to(this, 0.2, "setupCcolorR", 236, Ani.CUBIC_OUT);
-		//Ani.to(this, 0.2, "setupCcolorG", 240, Ani.CUBIC_OUT);
-		//Ani.to(this, 0.2, "setupCcolorB", 241, Ani.CUBIC_OUT);
+		Ani.to(this, 0.2f, "upBarH", 30, Ani.CUBIC_OUT);
 
 	}
 }
@@ -61,4 +55,22 @@ public void colorAni(color hexColor1,
 	Ani.to(this, duration, rVar, r1, Ani.CUBIC_OUT);
 	Ani.to(this, duration, gVar, g1, Ani.CUBIC_OUT);
 	Ani.to(this, duration, bVar, b1, Ani.CUBIC_OUT);
+}
+
+void bgBoxDataAni(boolean menu) {
+	if (!menu) {
+		Ani.to(this, 0.2f, "bgBoxAniY", 0, Ani.CUBIC_OUT);
+		if (bgBoxAniY == 0) {
+			//menu = false;
+			isBgBoxEmpty = true;
+		}
+
+	} else {
+		Ani.to(this, 0.2f, "bgBoxAniY", height, Ani.CUBIC_OUT);
+		if (bgBoxAniY == height) {
+			//menu = true;
+			isBgBoxEmpty = true;
+		}
+
+	}
 }
