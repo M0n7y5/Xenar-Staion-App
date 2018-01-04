@@ -1,2 +1,6 @@
 # Xenar-Station-App
 Bueatiful dashboard for Cansat Xenar1...
+
+## Vývoj byl ukončen ...
+
+![alt text](https://i.imgur.com/8qO2FqU.jpg "WIP")
